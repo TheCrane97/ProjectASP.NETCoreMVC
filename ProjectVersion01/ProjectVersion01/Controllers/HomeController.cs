@@ -38,10 +38,6 @@ namespace ProjectVersion01.Controllers
         {
             return View();
         }
-        public IActionResult Bicycles()
-        {
-            return View("~/Views/Bicycles/Index.cshtml");
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
