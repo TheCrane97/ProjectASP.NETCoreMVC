@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EFGetStarted.AspNetCore.NewDb.Models
 {
@@ -45,9 +46,12 @@ namespace EFGetStarted.AspNetCore.NewDb.Models
 
     public class Bicycle
     {
+        [Key]
         public int BicycleId { get; set; }
+        [Required(ErrorMessage ="Please enter name/type of bicycle.")]
         public string Name { get; set; }
         public string Description { get; set; }
+        public byte[] Image { get; set; }
         public double Price { get; set; }
         public ICollection<Purchase> Purchases { get; set; }
 
