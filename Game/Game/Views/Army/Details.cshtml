@@ -1,0 +1,101 @@
+﻿@model Game.Models.ArmyModel
+
+@{
+    ViewBag.Title = "Army";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArmyModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.UnitId)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.UnitId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Defence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Defence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MagicResist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MagicResist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Knowledge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Knowledge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kingdom.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kingdom.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountOfDamage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountOfDamage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @{
+        if (User.IsInRole("admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.UnitId }) <font size="2"> | </font>
+            @Html.ActionLink("Back to List", "Index")
+        }
+        else if (User.IsInRole("user"))
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }
+
+    }
+
+</p>
